@@ -1,0 +1,46 @@
+2023-11-12T14:04:58.989+09:00  INFO 13796 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication using Java 21.0.1 with PID 13796 (/Users/appmanager/Documents/spring-app/demo/target/classes started by appmanager in /Users/appmanager/Documents/spring-app/demo)
+2023-11-12T14:04:58.995+09:00  INFO 13796 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-11-12T14:04:59.971+09:00  INFO 13796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-12T14:05:00.119+09:00  INFO 13796 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 131 ms. Found 3 JPA repository interfaces.
+2023-11-12T14:05:00.539+09:00  INFO 13796 --- [main] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2023-11-12T14:05:00.541+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-11-12T14:05:00.543+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-11-12T14:05:00.544+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Skipping PropertySource servletContextInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-11-12T14:05:00.545+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2023-11-12T14:05:00.546+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2023-11-12T14:05:00.546+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2023-11-12T14:05:00.547+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2023-11-12T14:05:00.828+09:00  INFO 13796 --- [main] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2023-11-12T14:05:00.842+09:00  INFO 13796 --- [main] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2023-11-12T14:05:00.846+09:00  INFO 13796 --- [main] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2023-11-12T14:05:01.165+09:00  INFO 13796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-11-12T14:05:01.179+09:00  INFO 13796 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-12T14:05:01.179+09:00  INFO 13796 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-12T14:05:01.295+09:00  INFO 13796 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-12T14:05:01.295+09:00  INFO 13796 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2195 ms
+2023-11-12T14:05:01.369+09:00  INFO 13796 --- [main] c.u.j.encryptor.DefaultLazyEncryptor     : Found Custom Encryptor Bean org.jasypt.encryption.pbe.PooledPBEStringEncryptor@48eb001a with name: jasyptStringEncryptor
+2023-11-12T14:05:01.735+09:00  INFO 13796 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-12T14:05:01.819+09:00  INFO 13796 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-12T14:05:01.823+09:00  INFO 13796 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-12T14:05:02.226+09:00  INFO 13796 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-12T14:05:02.254+09:00  INFO 13796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-12T14:05:02.261+09:00  WARN 13796 --- [main] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2023-11-12T14:05:02.589+09:00  INFO 13796 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@24691c5
+2023-11-12T14:05:02.591+09:00  INFO 13796 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-12T14:05:04.066+09:00  INFO 13796 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-12T14:05:04.070+09:00  INFO 13796 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-12T14:05:04.591+09:00  INFO 13796 --- [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-11-12T14:05:05.187+09:00  WARN 13796 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-12T14:05:05.658+09:00  INFO 13796 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-11-12T14:05:05.660+09:00  INFO 13796 --- [main] u.j.c.RefreshScopeRefreshedEventListener : Refreshing cached encryptable property sources on ServletWebServerInitializedEvent
+2023-11-12T14:05:05.660+09:00  INFO 13796 --- [main] CachingDelegateEncryptablePropertySource : Property Source systemProperties refreshed
+2023-11-12T14:05:05.661+09:00  INFO 13796 --- [main] CachingDelegateEncryptablePropertySource : Property Source systemEnvironment refreshed
+2023-11-12T14:05:05.661+09:00  INFO 13796 --- [main] CachingDelegateEncryptablePropertySource : Property Source random refreshed
+2023-11-12T14:05:05.661+09:00  INFO 13796 --- [main] CachingDelegateEncryptablePropertySource : Property Source Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' refreshed
+2023-11-12T14:05:05.661+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+2023-11-12T14:05:05.661+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Skipping PropertySource servletConfigInitParams [class org.springframework.core.env.PropertySource$StubPropertySource
+2023-11-12T14:05:05.661+09:00  INFO 13796 --- [main] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.web.context.support.ServletContextPropertySource] to EncryptableEnumerablePropertySourceWrapper
+2023-11-12T14:05:05.671+09:00  INFO 13796 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 7.529 seconds (process running for 8.376)
+2023-11-12T14:08:46.796+09:00  INFO 13796 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-12T14:08:46.800+09:00  INFO 13796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-12T14:08:46.826+09:00  INFO 13796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
