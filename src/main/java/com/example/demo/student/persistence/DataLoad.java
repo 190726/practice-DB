@@ -5,6 +5,7 @@ import com.example.demo.student.Emp;
 import com.github.javafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,8 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-//@Component
+@Profile("local")
+@Component
 public class DataLoad implements CommandLineRunner {
     @Autowired DeptRepository deptRepository;
 
