@@ -5,6 +5,7 @@ import com.example.demo.student.persistence.DeptRepository;
 import com.example.demo.student.Emp;
 import com.example.demo.student.persistence.EmpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
@@ -12,6 +13,9 @@ import java.util.List;
 
 @RestController
 public class EmpController {
+
+    @Value("${app.name}")
+    private String appName;
 
     @Autowired
     EmpRepository empRepository;
@@ -36,7 +40,7 @@ public class EmpController {
 
     @GetMapping("/emp/query")
     Iterable<Emp> findQuery(@RequestParam String deptCode, @RequestParam Integer age){
-        //Dept dept = deptRepository.findByDeptCode(deptCode);
+        System.out.println(appName);
         return empRepository.findAllByDeptAndAgeGreaterThan(deptCode, age);
     }
 
