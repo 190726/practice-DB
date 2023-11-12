@@ -1,5 +1,11 @@
-package com.example.demo.student;
+package com.example.demo.student.persistence;
 
+import com.example.demo.student.Emp;
+import com.example.demo.student.QDept;
+import com.example.demo.student.QEmp;
+import com.example.demo.student.QScore;
+import com.example.demo.student.web.EmpResponse;
+import com.example.demo.student.web.EmpScoreResponse;
 import com.querydsl.core.Tuple;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -56,10 +62,6 @@ public class EmpRepositoryCustomImpl implements EmpRepositoryCustom {
         return query.fetchJoin().fetch()
                 .stream().map(tuple ->
                 {
-
-                    System.out.println(emp.sexType);
-                    System.out.println(tuple.get(emp.sexType.stringValue()));
-                    System.out.println(tuple.get(3, Emp.SexType.class));
                         return new EmpResponse(
                         tuple.get(emp.empNo),
                         tuple.get(emp.age),
@@ -67,6 +69,29 @@ public class EmpRepositoryCustomImpl implements EmpRepositoryCustom {
                         tuple.get(3, Emp.SexType.class).getText(),
                         tuple.get(emp.address),
                         tuple.get(dept.name));
+                }).toList();
+    }
+
+    @Override
+    public List<EmpScoreResponse> findByScore(Integer num) {
+        QEmp emp = QEmp.emp;
+        QScore score = QScore.score1;
+
+        JPAQuery<Tuple> query = queryFactory.select(
+                        emp.empNo,
+                        emp.name,
+                        score.score
+                ).from(emp).join(score).on(emp.empNo.eq(score.empNo))
+                .where(score.score.gt(num))
+                .orderBy(emp.name.desc());
+
+        return query.fetchJoin().fetch()
+                .stream().map(tuple ->
+                {
+                    return new EmpScoreResponse(
+                            tuple.get(emp.empNo),
+                            tuple.get(emp.name),
+                            tuple.get(2, Double.class));
                 }).toList();
     }
 }

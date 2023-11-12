@@ -1,21 +1,21 @@
-package com.example.demo.student;
+package com.example.demo.student.persistence;
 
+import com.example.demo.student.Dept;
+import com.example.demo.student.Emp;
 import com.github.javafaker.Faker;
-import nonapi.io.github.classgraph.json.JSONUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.stream.IntStream;
 
 //@Component
 public class DataLoad implements CommandLineRunner {
-
     @Autowired DeptRepository deptRepository;
+
     @Autowired EmpRepository empRepository;
 
     @Override
