@@ -5,13 +5,13 @@ import com.example.demo.student.Dept;
 import com.example.demo.student.persistence.DeptRepository;
 import com.example.demo.student.Emp;
 import com.example.demo.student.persistence.EmpRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Iterator;
 import java.util.List;
 
 @RestController
@@ -73,7 +73,7 @@ public class EmpController {
     }
 
     @PostMapping("/emp")
-    Emp create(@RequestBody EmpRequest request){
+    Emp create(@RequestBody @Valid EmpRequest request){
         Dept dept = deptRepository.findByDeptCode(request.deptcode());
 
         return empRepository.save(Emp.builder()
