@@ -25,6 +25,16 @@ public class EmpController {
     @Autowired
     DeptRepository deptRepository;
 
+    @GetMapping("/emp/hello")
+    String shutdownTest() throws InterruptedException {
+        //셧다운 테스트
+        //server.shutdown=graceful => thread  처리 완료 후 부트 종료, 생략시 즉각 종료
+        System.out.println("20초간 대기 후 종료됩니다.");
+        Thread.sleep(20000);
+        System.out.println("완료되었어요");
+        return "hello";
+    }
+
     @GetMapping("/emp/queryMethod/1")
     Iterable<Emp> findBySexType(@RequestParam String sexType){
         return empRepository.findBySexTypeOrderByCreateDateTimeDesc(Emp.SexType.valueOf(sexType));
@@ -37,6 +47,7 @@ public class EmpController {
 
     @GetMapping("/emp/where")
     List<EmpResponse> findWhere(@RequestParam Integer age, @RequestParam String region){
+        if(age == 40) throw new IllegalArgumentException(">>>>ExceptionXXXXXXX");
         return empRepository.findByAgeAndRegion(age, region);
     }
 
