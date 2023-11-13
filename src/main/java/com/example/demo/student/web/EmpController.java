@@ -1,5 +1,6 @@
 package com.example.demo.student.web;
 
+import com.example.demo.AppProperties;
 import com.example.demo.student.Dept;
 import com.example.demo.student.persistence.DeptRepository;
 import com.example.demo.student.Emp;
@@ -25,12 +26,16 @@ public class EmpController {
     @Autowired
     DeptRepository deptRepository;
 
+    @Autowired
+    AppProperties appProperties;
+
     @GetMapping("/emp/hello")
     String shutdownTest() throws InterruptedException {
         //셧다운 테스트
+        System.out.println(appProperties.getName() + ":" + appProperties.getSecurity().getToken());
         //server.shutdown=graceful => thread  처리 완료 후 부트 종료, 생략시 즉각 종료
-        System.out.println("20초간 대기 후 종료됩니다.");
-        Thread.sleep(20000);
+        System.out.println("10초간 대기 후 종료됩니다.");
+        Thread.sleep(10000);
         System.out.println("완료되었어요");
         return "hello";
     }
