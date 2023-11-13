@@ -6,6 +6,8 @@ import com.example.demo.student.Emp;
 import com.example.demo.student.persistence.EmpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
@@ -23,6 +25,11 @@ public class EmpController {
     @Autowired
     DeptRepository deptRepository;
 
+    @GetMapping("/emp/queryMethod/1")
+    Iterable<Emp> findBySexType(@RequestParam String sexType){
+        return empRepository.findBySexTypeOrderByCreateDateTimeDesc(Emp.SexType.valueOf(sexType));
+    }
+
     @GetMapping("/emp/{deptCode}")
     List<EmpResponse> findBy(@PathVariable String deptCode){
         return empRepository.findByDeptCode(deptCode);
@@ -31,6 +38,11 @@ public class EmpController {
     @GetMapping("/emp/where")
     List<EmpResponse> findWhere(@RequestParam Integer age, @RequestParam String region){
         return empRepository.findByAgeAndRegion(age, region);
+    }
+
+    @GetMapping("/emp/where2")
+    Page<Emp> findWhere(@RequestParam String deptCode, @RequestParam String region, Pageable pageable){
+        return empRepository.findAllByDeptAndRegionOrderByNameAsc(deptCode, region, pageable);
     }
 
     @GetMapping("/emp/score")
@@ -54,5 +66,4 @@ public class EmpController {
                         .dept(dept)
                 .build());
     }
-
 }

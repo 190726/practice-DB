@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.learn;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class JasyptConfigTest {
-
-
     @Test
     void encryptor(){
        String key = "A41Dgnl8ltNoGUclo05fA89zFAyeY1db";
