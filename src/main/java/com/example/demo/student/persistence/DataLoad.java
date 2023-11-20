@@ -9,11 +9,12 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.stream.IntStream;
 
-@Profile("local")
+@Profile("dev")
 @Component
 public class DataLoad implements CommandLineRunner {
     @Autowired DeptRepository deptRepository;
@@ -22,6 +23,9 @@ public class DataLoad implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+        List<Dept> allDept = deptRepository.findAll();
+        if(!allDept.isEmpty()) return;
 
         Dept dept0 = Dept.builder().deptCode("A001").name("인사팀").build();
         Dept dept1 = Dept.builder().deptCode("A002").name("총무팀").build();
