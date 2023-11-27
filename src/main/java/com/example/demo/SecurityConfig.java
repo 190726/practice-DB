@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.users.CustomUserDetailService;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +28,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->{
                     auth
                         .requestMatchers("/emp/**").permitAll()
+                        .requestMatchers("/hello/**").hasRole("USER")
 //                        .requestMatchers("/**").hasRole("USER")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated();
@@ -38,6 +40,8 @@ public class SecurityConfig {
         return http.build();
     }
 
+
+
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -45,13 +49,14 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user =
-                User.builder()
-                        .username("user")
-                        .password(passwordEncoder().encode("1234"))
-                        .roles("USER")
-                        .build();
-        return new InMemoryUserDetailsManager(user);
+        return new CustomUserDetailService();
+//        UserDetails user =
+//                User.builder()
+//                        .username("user")
+//                        .password(passwordEncoder().encode("1234"))
+//                        .roles("USER")
+//                        .build();
+//        return new InMemoryUserDetailsManager(user);
     }
 
     //SecurityAutoConfiguration

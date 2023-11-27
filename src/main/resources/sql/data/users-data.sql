@@ -1,0 +1,3 @@
+insert into CT_USERS values(USERS_SEQ.nextval, 'sixstar6', '$2a$10$EZYfVEkD0yoKNj8TZYaNiu1qBLcF/EiWfmT/jOuU8Cr8rUTrifhe6', 'Y','N','N');
+insert into CT_USERS values(USERS_SEQ.nextval, 'sixstar1', '$2a$10$EZYfVEkD0yoKNj8TZYaNiu1qBLcF/EiWfmT/jOuU8Cr8rUTrifhe6', 'Y','N','N');
+insert into CT_USERS values(USERS_SEQ.nextval, 'sixstar2', '$2a$10$EZYfVEkD0yoKNj8TZYaNiu1qBLcF/EiWfmT/jOuU8Cr8rUTrifhe6', 'Y','N','N');

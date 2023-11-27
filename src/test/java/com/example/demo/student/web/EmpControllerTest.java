@@ -45,7 +45,7 @@ class EmpControllerTest {
 
         when(empRepository.save(any())).thenReturn(Emp.builder().empNo("9999").build());
 
-        EmpRequest empRequest = new EmpRequest("9999", "이상국", "A001");
+        EmpRequest empRequest = new EmpRequest("9999", "이상국",44, "A001");
 
         System.out.println(empRepository);
         mockMvc.perform(post("/emp")
